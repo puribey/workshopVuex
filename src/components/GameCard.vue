@@ -10,7 +10,7 @@
         :src="gameProp.src"
         >
         <div class="flex-button">
-        <v-btn icon @click="onUpdateFavourite" v-if="!isInFav" color="white">
+        <v-btn icon color="white">
             <v-icon color="deep-purple lighten-2" v-if="!gameProp.favourite">favorite_border</v-icon>
             <v-icon color="deep-purple lighten-2" v-if="gameProp.favourite">favorite</v-icon>
         </v-btn>
