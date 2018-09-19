@@ -2,18 +2,18 @@
   <v-container grid-list-xl text-xs-center> <!-- add fluid -->
     <v-layout row wrap>
       <v-flex xs12>
-        <v-img max-height="400"> <!-- src -->
+        <v-img :src="game.src" max-height="400"> <!-- src -->
         </v-img>
       </v-flex>
       <v-flex xs12 sm6>
-        <h3 class="display-3 deep-purple--text lighten-2 mb-3" ></h3> <!-- title -->
+        <h3 class="display-3 deep-purple--text lighten-2 mb-3" >{{ game.title }}</h3> <!-- title -->
         <p
         class="subheading text-md-left"
-        ></p> <!-- description -->
+        >{{ game.description }}</p> <!-- description -->
       </v-flex>
       <v-flex xs12 sm6>
         <v-rating
-          value="3"
+          :value="game.value"
           color="deep-purple lighten-2"
           dense
           half-increments
@@ -43,6 +43,11 @@ export default {
   data(){
     return{
       
+    }
+  },
+  computed: {
+    game(){
+      return this.$store.getters.getGame(this.$route.params.id) // gameIDRouter
     }
   }
 }
