@@ -188,8 +188,18 @@ export default new Vuex.Store({
         if (game.id === payload){
           game.favourite = !game.favourite
           state.favouriteGames = [...state.favouriteGames, game]
-          // state.favouriteGames = state.favouriteGames.concat(game)
         }
+        // if (game.id === payload) {
+        //   game.favourite = !game.favourite;
+        //   if (game.favourite == true) {
+        //     state.favouriteGames = [...state.favouriteGames, game];
+        //   } else {
+        //     state.favouriteGames = [
+        //       ...state.favouriteGames.slice(0, index),
+        //       ...state.favouriteGames.slice(index + 1)
+        //     ];
+        //   }
+        // }
         return game;
       })
       state.gameList = updatedStoreWithFavourite
@@ -216,3 +226,9 @@ export default new Vuex.Store({
     }
   }
 });
+
+// Some steps to follow in this page:
+// 1. Erase State
+// 2. Create Actions and mutations to create new game 
+// 3. Connect Firebase 
+// 4. Now do it with firebase
